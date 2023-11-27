@@ -1,4 +1,5 @@
 <body>
+  <!--Si videojuegoSeleccionado es null, mostramos el div -->
   <div *ngIf="videojuegoSeleccionado == null">
     <div id="ListaVideojuegos">
         <h3>Listado de Videojuegos</h3>
@@ -12,9 +13,11 @@
             </thead>
             
             <tbody>
+              <!-- recorremos la lista de videojuegos y añadimos a la tabla los atributos -->
               <tr *ngFor="let videojuego of videojuegos">
                   <td class="medio">{{ videojuego.idVideojuego }}</td>
                   <td class="enlace">
+                    <!-- Cuando hacemos click en el titulo, se activa el metodo ver detalle -->
                     <div (click)="verDetalle(videojuego.idVideojuego)">{{ videojuego.titulo }}</div>
                   </td>
                   <td class="medio">{{ videojuego.valoracionMedia }}</td>
@@ -23,10 +26,11 @@
          </table>
      </div>
     </div>
-
+    <!--Si videojuegoSeleccionado es distinto de null, mostramos el div -->
     <div *ngIf="videojuegoSeleccionado !== null">
     <br><br><hr>
       <h3>Detalle de Videojuego</h3>
+      <!-- Sacamos los atributo de los videojuegos por la id del seleccionado -->
       <h3>{{ videojuegos[videojuegoSeleccionado].titulo }}</h3>
       <p>Id: {{ videojuegos[videojuegoSeleccionado].idVideojuego }}</p>
       <p>Compañía: {{ videojuegos[videojuegoSeleccionado].compania }}</p>

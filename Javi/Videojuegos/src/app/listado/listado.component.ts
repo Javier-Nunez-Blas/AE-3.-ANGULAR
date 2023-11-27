@@ -11,10 +11,7 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  title = 'Videojuegos'
-
-
-
+  // Añadimos los videojuegos con todos sus atributos a la clase videojuego
   videojuegos: Videojuego[] = [
     new Videojuego(1, "AOE2 Definitive Edition", "Nintendo", "Aoe2.png", 9),
     new Videojuego(2, "Fifa 2023", "Konami", "Fifa23.jpeg", 7),
@@ -27,18 +24,18 @@ export class ListadoComponent implements OnInit {
     new Videojuego(9, "Tetris", "EA Mobile", "Tetris.jpeg", 3),
     new Videojuego(10, "Minecraft", "CD Projekt Red", "Minecraf.jpeg", 5)
   ]
-
+  // inicalizamo la variable videojuego seleccionado a null, pudiendo ser un numbre (por la id de videojuegos) o un null
   videojuegoSeleccionado: number | null = null
-
+  // recibe el id de videojuego y cambia la id a -1, para que correspondan con los de la lista de videojuegos.
   verDetalle(id: number): void {
     this.videojuegoSeleccionado = id - 1
   }
-  
+  // cambia el estado de videojuego seleccionado a null para mostrar o no los div con *ngIf
   volver(): void {
     this.videojuegoSeleccionado = null
   }
 }
-
+// Creamos la clase videojuego con sus atrinutos y un constructor
 class Videojuego {
   public idVideojuego: number
   public titulo: string
