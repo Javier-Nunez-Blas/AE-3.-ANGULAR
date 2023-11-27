@@ -1,0 +1,39 @@
+<body>
+  <div *ngIf="videojuegoSeleccionado == null">
+    <div id="ListaVideojuegos">
+        <h3>Listado de Videojuegos</h3>
+        <table id="tabla">
+            <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>Título</th>
+                  <th>Valoración Media</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <tr *ngFor="let videojuego of videojuegos">
+                  <td class="medio">{{ videojuego.idVideojuego }}</td>
+                  <td class="enlace">
+                    <div (click)="verDetalle(videojuego.idVideojuego)">{{ videojuego.titulo }}</div>
+                  </td>
+                  <td class="medio">{{ videojuego.valoracionMedia }}</td>
+              </tr>
+            </tbody>
+         </table>
+     </div>
+    </div>
+
+    <div *ngIf="videojuegoSeleccionado !== null">
+    <br><br><hr>
+      <h3>Detalle de Videojuego</h3>
+      <h3>{{ videojuegos[videojuegoSeleccionado].titulo }}</h3>
+      <p>Id: {{ videojuegos[videojuegoSeleccionado].idVideojuego }}</p>
+      <p>Compañía: {{ videojuegos[videojuegoSeleccionado].compania }}</p>
+      <p>Imagen :</p><img src="assets/imagenes/{{ videojuegos[videojuegoSeleccionado].imagen }}">
+      <p>Valoración media: {{ videojuegos[videojuegoSeleccionado].valoracionMedia }}</p>
+
+      <button (click)="volver()">Volver</button>
+      <hr>
+    </div>
+</body>

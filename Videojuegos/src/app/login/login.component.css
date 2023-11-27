@@ -1,0 +1,23 @@
+.cabecera{
+    background-color:rgb(156, 226, 43);
+    padding: 10px; 
+    text-align: center;
+    border: 1px solid black
+  }
+
+  .caja {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;  
+    display: inline-block;
+    padding: 20px;
+    width: 200px;
+    background-color: #ecf0f1;
+    margin: 10px;
+    border: 1px solid black 
+    
+  }
+
+  h3{
+    color: crimson;
+  }
