@@ -1,0 +1,43 @@
+
+<!-- 
+  Usamos un *ngif para mostrar los enlaces a los otros html pero quiero
+  que se vea el div en color verde, por eso los he puesto en los div de
+  enlaces. Y solo cuando pone el usuario y contraseña corresctos, se
+  muestran los enlaces dentro del div cabecera
+-->
+<div class="cabecera">
+  <img src="assets/imagenes/header.png" id="intro"><br>
+  <div class="caja" *ngIf="login"><a routerLink="/listado">Listado de videojuegos</a></div>
+  <div class="caja" *ngIf="login"><a routerLink="/sobre-nosotros">Sobre nosotros</a></div>
+  <div class="caja" *ngIf="login"><a routerLink="/contacto">Contacto</a></div>
+</div>
+
+<div>
+ 
+  <h2 class="h2usuario" *ngIf="name!=null && name!=''">Usuario conectado: {{ name }}</h2>
+</div>
+<!-- 
+  Con este ngif mostramos el div del formulario y cuando pone la contraseña 
+  y usuario correctos, se oculta 
+-->
+<div *ngIf="!login">
+  
+  
+  <!-- 
+    Cuando mandamos el formulario, se activa el metodo enviar, que comprueba los
+    usuarios y contraseñas. Y cambia la variable login y nologin dependindo se si
+    es correcto o no.
+ -->
+  <form (ngSubmit)="enviar()">
+    <h2>Inicio de sesión</h2>
+    <input type="text" id="name" name="name" [(ngModel)]="name" required placeholder="Nombre de usuario">
+  
+    <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Contraseña">
+    
+    <button id="entrar" type="submit">Entrar</button>
+  </form>
+  <!-- Si el usuario o la contraseña son incorrectos avisa con un h3 -->
+  <h3 *ngIf="noLogin">Nombre de usuario o contraseña incorrectos</h3>
+</div>
+<!-- Para poder usar los enlaces a otros componentes -->
+<router-outlet></router-outlet>

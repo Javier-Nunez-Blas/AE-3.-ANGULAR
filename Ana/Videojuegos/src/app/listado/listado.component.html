@@ -1,0 +1,56 @@
+<body>
+  <header>
+    <h1>Listado de videojuegos</h1>
+  </header>
+
+  <!--Si videojuegoSeleccionado es null, mostramos el div -->
+  <div *ngIf="videojuegoSeleccionado == null">
+    <div id="ListaVideojuegos">
+        <br>
+        <br>
+        <table id="tabla">
+            <thead>
+              <tr>
+                  <th>Videojuegos</th>
+                  <th>Id</th>
+                  <th>Título</th>
+                  <th>Valoración Media</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <!-- recorremos la lista de videojuegos y añadimos a la tabla los atributos -->
+              <tr *ngFor="let videojuego of videojuegos">
+                  <td class="imagen"><img src="{{videojuego.imagen}}"></td>
+                  <td class="medio">{{ videojuego.idVideojuego }}</td>
+                  <td class="enlace">
+                    <!-- Cuando hacemos click en el titulo, se activa el metodo ver detalle -->
+                    <div (click)="verDetalle(videojuego.idVideojuego)">{{ videojuego.titulo }}</div>
+                  </td>
+                  <td class="medio">{{ videojuego.valoracionMedia }}</td>
+              </tr>
+            </tbody>
+         </table>
+     </div>
+    </div>
+    <!--Si videojuegoSeleccionado es distinto de null, mostramos el div -->
+    <div *ngIf="videojuegoSeleccionado !== null">
+   
+      <!-- Sacamos los atributo de los videojuegos por la id del seleccionado -->
+      <table>
+        <tr>
+            <td><h3>{{ videojuegos[videojuegoSeleccionado].titulo }}</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><img src="{{ videojuegos[videojuegoSeleccionado].imagen }}"></td>
+            <td>
+              <p>Id: {{ videojuegos[videojuegoSeleccionado].idVideojuego }}</p>
+              <p>Valoración media: {{ videojuegos[videojuegoSeleccionado].valoracionMedia }}</p>
+              <p>Compañía: {{ videojuegos[videojuegoSeleccionado].compania }}</p>
+            </td>
+        </tr>
+    </table>
+    <button (click)="volver()">Volver</button>
+    </div>  
+</body>

@@ -1,0 +1,91 @@
+.cabecera{
+    background-color:rgb(255, 255, 255);
+    padding: 10px; 
+    text-align: center;
+    width: auto; 
+    height: auto;
+    
+    
+  }
+
+  #intro{
+    border-radius: 80px;
+    align-items: center;
+  }
+
+  .h2usuario{
+    font-size: 16px;
+    margin-left: 80%;
+    color: #22186b;
+    
+
+  }
+
+  .caja {
+    color: #22186b;
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px;
+    width: 200px;
+    background-color: #bab8ba;
+    margin: 10px;
+    border-radius: 80px;
+    font-size: 20px;
+    
+  }
+
+  h3{
+    color: crimson;
+  }
+
+ 
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #c3bfbf;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-left: 36%;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #b700ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(136, 0, 255);
+}

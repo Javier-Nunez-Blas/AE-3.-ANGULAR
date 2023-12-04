@@ -1,0 +1,38 @@
+Set-ExecutionPolicy RemoteSigned -Scope Process
+
+ng new NOMBRE_PROYECTO_ANGULAR
+
+Set-ExecutionPolicy Restricted -Scope Process
+
+
+-- Abrir el proyecto Angular con servidor
+ng serve -o
+
+-- Parar servidor
+ctrl + c
+
+-- Permite a la powershell usar comandos tsc
+set-executionpolicy remotesigned
+
+--Compilar un thypscrip (lo ompila a js)
+tsc NOMBRE_FICHERO.ts      tsc -t es6 NOMBRE_FICHERO.ts(compila a la ultima version v6 de js)
+-- Compila los cambios automaticamente
+tsc -w -p
+
+Sino te creas un fichero llamado tsconfig.json y guarda automaticamente los cambios
+            {
+                "compilerOptions": {
+                "target": "es6"
+		"watch": true
+
+                }
+            }
+-- Crear un nuevo componente
+ng g c NOMBRE_COMPONENTE
+
+
+--Usar el js en consola
+node NOMBRE_FICHERO.js
+
+
+
